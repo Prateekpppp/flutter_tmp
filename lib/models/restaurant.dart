@@ -23,7 +23,7 @@ class Restaurant {
         '20-30 min',
         '2km',
         'Restaurant1',
-        'https://mealz.in/images/logo.png',
+        'assets/images/favicon.png',
         'delicious',
         4.2,
         {

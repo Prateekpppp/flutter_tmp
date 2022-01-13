@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tmp/constants/colors.dart';
 import 'package:flutter_tmp/models/restaurant.dart';
 
 class RestaurantInfo extends StatelessWidget {
@@ -35,18 +36,35 @@ class RestaurantInfo extends StatelessWidget {
                       ],),
                 ClipRRect(
                     borderRadius: BorderRadius.circular(50),
-                    child: Image.network(restaurant.logoUrl,
+                    child: Image.asset(restaurant.logoUrl,
                     height: 40,
-                    width: 40,),
+                    width: 40,
+                    color: Colors.blue,),
                 ),
-                      ],)
+                      ],),
+            SizedBox(height: 5,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                _buildContainer("${restaurant.desc}"),
+                Row(
+                  children: [
+                    Icon(Icons.star_outline,
+                    color: kprimecolor,),
+                    SizedBox(width: 10),
+                    _buildContainer("${restaurant.score}"),
+                    SizedBox(width: 10),
+                  ],
+                )
+              ],
+            )
                   ],)
       // ],
                   );
     // );
       }
 
-  Container _buildContainer(z) {
+  Widget _buildContainer(z) {
     return Container(
       padding: EdgeInsets.all(5),
       decoration: BoxDecoration(
